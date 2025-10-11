@@ -1,4 +1,4 @@
-FROM --platform=$BUILDPLATFORM nvcr.io/nvidia/cuda:12.4.0-devel-ubuntu22.04
+FROM nvcr.io/nvidia/cuda:12.4.0-devel-ubuntu22.04
 
 # Install Python and other dependencies
 RUN apt-get update -y &&  \
