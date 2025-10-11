@@ -2,7 +2,7 @@ FROM nvcr.io/nvidia/cuda:12.4.0-devel-ubuntu22.04
 
 # Install Python and other dependencies
 RUN apt-get update -y &&  \
-    apt-get install -y python3.10 python3-venv espeak-ng espeak-ng-data git libsndfile1 curl ffmpeg g++ &&  \
+    apt-get install -y python3.10 python3.10-dev python3-dev build-essential pkg-config python3-venv espeak-ng espeak-ng-data git libsndfile1 curl ffmpeg g++ &&  \
     apt-get clean && rm -rf /var/lib/apt/lists/* && \
     mkdir -p /usr/share/espeak-ng-data &&  \
     ln -s /usr/lib/*/espeak-ng-data/* /usr/share/espeak-ng-data/ && \
