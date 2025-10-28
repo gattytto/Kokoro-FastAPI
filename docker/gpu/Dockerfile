@@ -2,7 +2,27 @@ FROM nvcr.io/nvidia/cuda:13.0.0-devel-ubuntu24.04
 
 # Install Python and other dependencies
 RUN echo "deb [trusted=yes] https://ppa.launchpadcontent.net/deadsnakes/ppa/ubuntu noble main" > /etc/apt/sources.list.d/ds.list && apt update && \
-    apt install -y python3.10 python3.10-dev python3-dev build-essential pkg-config python3-venv espeak-ng espeak-ng-data git libsndfile1 curl ffmpeg g++ &&  \
+    apt install -y python3.10 \
+                    python3.10-dev \
+                    python3-dev \
+                    build-essential \
+                    pkg-config \
+                    python3-venv \
+                    espeak-ng \
+                    espeak-ng-data \
+                    git \
+                    libsndfile1 \
+                    curl \
+                    ffmpeg \
+                    g++ \
+                    ffmpeg \
+                    libavformat-dev \
+                    libavcodec-dev \
+                    libavdevice-dev \
+                    libavutil-dev \
+                    libavfilter-dev \
+                    libswscale-dev \
+                    libswresample-dev && \
     apt clean && rm -rf /var/lib/apt/lists/* && \
     mkdir -p /usr/share/espeak-ng-data &&  \
     ln -s /usr/lib/*/espeak-ng-data/* /usr/share/espeak-ng-data/ && \
