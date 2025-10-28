@@ -4,8 +4,8 @@ RUN apt update && \
     add-apt-repository -y ppa:ubuntuhandbook1/ffmpeg6 && \
     add-apt-repository ppa:deadsnakes/ppa && \
     find /etc/apt/sources.list.d/ -name "*handbook1*" -exec sed -i 's/noble/focal/g' {} \; && \
-    apt update
-RUN apt install -y python3.11 \
+    apt update && \
+    apt install -y python3.11 \
                     python3.11-dev \
                     python3-dev \
                     build-essential \
@@ -16,16 +16,16 @@ RUN apt install -y python3.11 \
                     git \
                     libsndfile1 \
                     curl \
-                    g++ 
-RUN apt install -y ffmpeg \
+                    g++ && \
+    apt install -y ffmpeg \
                     libavcodec-dev \
                     libavdevice-dev \
                     libavfilter-dev \
                     libavformat-dev \
                     libavutil-dev \
                     libswresample-dev \
-                    libswscale-dev
-RUN apt clean && rm -rf /var/lib/apt/lists/* && \
+                    libswscale-dev && \
+    apt clean && rm -rf /var/lib/apt/lists/* && \
     mkdir -p /usr/share/espeak-ng-data &&  \
     ln -s /usr/lib/*/espeak-ng-data/* /usr/share/espeak-ng-data/ && \
     curl -LsSf https://astral.sh/uv/install.sh | sh && \
