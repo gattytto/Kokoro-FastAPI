@@ -43,7 +43,7 @@ COPY --chown=appuser:appuser pyproject.toml ./pyproject.toml
 
 # Install dependencies with GPU extras
 RUN uv venv --python 3.10 \
-     && uv pip install "Cython>=0.29.0,<0.30.0" \
+     && uv pip install "Cython==0.29.20" \
      && uv pip install "git+https://github.com/PyAV-Org/PyAV.git@v10.0.0" \
      && uv sync --extra gpu --no-cache
 
