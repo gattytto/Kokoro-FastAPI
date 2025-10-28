@@ -44,7 +44,7 @@ COPY --chown=appuser:appuser pyproject.toml ./pyproject.toml
 # Install dependencies with GPU extras
 RUN uv venv --python 3.10 \
      && uv pip install "Cython<3" \
-     && uv pip install "git+https://github.com/PyAV-Org/PyAV.git@main" \
+     && uv pip install "git+https://github.com/PyAV-Org/PyAV.git@v10.0.0" \
      && uv sync --extra gpu --no-cache
 
 # Copy project files including models
