@@ -1,4 +1,4 @@
-FROM nvcr.io/nvidia/cuda:13.0.0-devel-ubuntu24.04
+FROM nvcr.io/nvidia/cuda:13.0.0-devel-ubuntu25.04
 RUN apt update && \
     apt install -y software-properties-common && \
     add-apt-repository ppa:savoury1/ffmpeg6 && add-apt-repository ppa:deadsnakes/ppa && \
