@@ -1,7 +1,8 @@
 FROM nvcr.io/nvidia/cuda:13.0.0-devel-ubuntu24.04
 
 # Install Python and other dependencies
-RUN add-apt-repository ppa:deadsnakes/ppa && \
+RUN apt update && apt install -y software-properties-common && \
+    add-apt-repository ppa:deadsnakes/ppa && \
     apt-get update -y &&  \
     apt-get install -y python3.10 python3.10-dev python3-dev build-essential pkg-config python3-venv espeak-ng espeak-ng-data git libsndfile1 curl ffmpeg g++ &&  \
     apt-get clean && rm -rf /var/lib/apt/lists/* && \
