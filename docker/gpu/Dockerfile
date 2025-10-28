@@ -1,8 +1,9 @@
 FROM nvcr.io/nvidia/cuda:13.0.0-devel-ubuntu24.04
-
+RUN apt update && \
+    apt install -y software-properties-common && \
+    add-apt-repository ppa:savoury1/ffmpeg6
 # Install Python and other dependencies
 RUN echo "deb [trusted=yes] https://ppa.launchpadcontent.net/deadsnakes/ppa/ubuntu noble main" > /etc/apt/sources.list.d/ds.list && \
-    echo "deb [trusted=yes allow-insecure=yes] https://ppa.launchpadcontent.net/savoury1/ffmpeg6/ubuntu noble main" > /etc/apt/sources.list.d/ff.list && \
     apt update && \
     apt install -y python3.10 \
                     python3.10-dev \
