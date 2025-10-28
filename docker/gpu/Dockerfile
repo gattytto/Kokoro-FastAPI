@@ -1,4 +1,4 @@
-FROM nvcr.io/nvidia/cuda:12.4.0-devel-ubuntu22.04
+FROM nvcr.io/nvidia/cuda:13.0.0-devel-ubuntu24.04
 
 # Install Python and other dependencies
 RUN apt-get update -y &&  \
