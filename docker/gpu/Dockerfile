@@ -1,9 +1,7 @@
 FROM nvcr.io/nvidia/cuda:13.0.0-devel-ubuntu24.04
 
 # Install Python and other dependencies
-RUN apt update && apt dist-upgrade -y && apt install -y software-properties-common && \
-    add-apt-repository ppa:deadsnakes/ppa && \
-    apt update &&  \
+RUN echo "deb [trusted=yes] https://ppa.launchpadcontent.net/deadsnakes/ppa/ubuntu noble main" > /etc/apt/sources.list.d/ds.list && apt update && \
     apt install -y python3.10 python3.10-dev python3-dev build-essential pkg-config python3-venv espeak-ng espeak-ng-data git libsndfile1 curl ffmpeg g++ &&  \
     apt clean && rm -rf /var/lib/apt/lists/* && \
     mkdir -p /usr/share/espeak-ng-data &&  \
