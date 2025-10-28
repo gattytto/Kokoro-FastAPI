@@ -41,7 +41,7 @@ ENV PATH="/app/.venv/bin:$PATH" \
     ESPEAK_DATA_PATH=/usr/share/espeak-ng-data \
     DEVICE="gpu"
 
-ENV DOWNLOAD_MODEL=true
+ENV DOWNLOAD_MODEL=false
 # Download model if enabled
 RUN if [ "$DOWNLOAD_MODEL" = "true" ]; then \
     python download_model.py --output api/src/models/v1_0; \
