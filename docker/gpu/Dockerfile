@@ -5,8 +5,8 @@ RUN apt update && \
     add-apt-repository ppa:deadsnakes/ppa && \
     find /etc/apt/sources.list.d/ -name "*handbook1*" -exec sed -i 's/noble/focal/g' {} \; && \
     apt update
-RUN apt install -y python3.10 \
-                    python3.10-dev \
+RUN apt install -y python3.11 \
+                    python3.11-dev \
                     python3-dev \
                     build-essential \
                     pkg-config \
