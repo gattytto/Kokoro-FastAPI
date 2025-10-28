@@ -1,7 +1,6 @@
 FROM nvcr.io/nvidia/cuda:13.0.0-devel-ubuntu24.04
 RUN apt update && \
     apt install -y software-properties-common && \
-    add-apt-repository -y ppa:savoury1/ffmpeg6 && \
     add-apt-repository -y ppa:ubuntuhandbook1/ffmpeg6 && \
     apt update
 RUN apt install -y python3.10 \
