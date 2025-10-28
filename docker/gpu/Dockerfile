@@ -1,8 +1,6 @@
 FROM nvcr.io/nvidia/cuda:13.0.0-devel-ubuntu24.04
 RUN apt update && \
     apt install -y software-properties-common && \
-    add-apt-repository -y ppa:savoury1/backports && \
-    add-apt-repository -y ppa:savoury1/multimedia && \
     add-apt-repository -y ppa:savoury1/ffmpeg6 && \
     add-apt-repository -y ppa:deadsnakes/ppa && \
     apt update
@@ -17,9 +15,8 @@ RUN apt install -y python3.10 \
                     git \
                     libsndfile1 \
                     curl \
-                    ffmpeg \
-                    g++ \
-                    ffmpeg \
+                    g++ 
+RUN apt install -y ffmpeg \
                     libavcodec-dev \
                     libavdevice-dev \
                     libavfilter-dev \
@@ -27,7 +24,7 @@ RUN apt install -y python3.10 \
                     libavutil-dev \
                     libswresample-dev \
                     libswscale-dev
-    apt clean && rm -rf /var/lib/apt/lists/* && \
+RUN apt clean && rm -rf /var/lib/apt/lists/* && \
     mkdir -p /usr/share/espeak-ng-data &&  \
     ln -s /usr/lib/*/espeak-ng-data/* /usr/share/espeak-ng-data/ && \
     curl -LsSf https://astral.sh/uv/install.sh | sh && \
