@@ -1,7 +1,7 @@
-FROM nvcr.io/nvidia/cuda:13.0.0-devel-ubuntu25.04
+FROM nvcr.io/nvidia/cuda:13.0.0-devel-ubuntu24.04
 RUN apt update && \
     apt install -y software-properties-common && \
-    add-apt-repository ppa:savoury1/ffmpeg6 && add-apt-repository ppa:deadsnakes/ppa && \
+    add-apt-repository ppa:ubuntuhandbook1/ffmpeg6 && add-apt-repository ppa:deadsnakes/ppa && \
     apt update
 RUN apt install -y python3.10 \
                     python3.10-dev \
@@ -17,13 +17,13 @@ RUN apt install -y python3.10 \
                     ffmpeg \
                     g++ \
                     ffmpeg \
-                    libavcodec60 libavcodec-dev \
-                    libavdevice60 libavdevice-dev \
-                    libavfilter9 libavfilter-dev \
-                    libavformat60 libavformat-dev \
-                    libavutil58 libavutil-dev \
-                    libswresample4 libswresample-dev \
-                    libswscale7 libswscale-dev
+                    libavcodec-dev \
+                    libavdevice-dev \
+                    libavfilter-dev \
+                    libavformat-dev \
+                    libavutil-dev \
+                    libswresample-dev \
+                    libswscale-dev
     apt clean && rm -rf /var/lib/apt/lists/* && \
     mkdir -p /usr/share/espeak-ng-data &&  \
     ln -s /usr/lib/*/espeak-ng-data/* /usr/share/espeak-ng-data/ && \
