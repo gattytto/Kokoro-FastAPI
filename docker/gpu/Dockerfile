@@ -17,13 +17,13 @@ RUN apt install -y python3.10 \
                     ffmpeg \
                     g++ \
                     ffmpeg \
-                    libavformat-dev \
-                    libavcodec-dev \
-                    libavdevice-dev \
-                    libavutil-dev \
-                    libavfilter-dev \
-                    libswscale-dev \
-                    libswresample-dev && \
+                    libavcodec60 libavcodec-dev \
+                    libavdevice60 libavdevice-dev \
+                    libavfilter9 libavfilter-dev \
+                    libavformat60 libavformat-dev \
+                    libavutil58 libavutil-dev \
+                    libswresample4 libswresample-dev \
+                    libswscale7 libswscale-dev
     apt clean && rm -rf /var/lib/apt/lists/* && \
     mkdir -p /usr/share/espeak-ng-data &&  \
     ln -s /usr/lib/*/espeak-ng-data/* /usr/share/espeak-ng-data/ && \
