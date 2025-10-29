@@ -16,8 +16,8 @@ RUN apt update && \
                     git \
                     libsndfile1 \
                     curl \
-                    g++ && \
-    apt install -y ffmpeg \
+                    g++  \
+                    ffmpeg \
                     libavcodec-dev \
                     libavdevice-dev \
                     libavfilter-dev \
